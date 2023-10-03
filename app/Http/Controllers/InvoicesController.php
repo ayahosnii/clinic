@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Exports\InvoicesExport;
 use Illuminate\Support\Facades\Notification;
 use App\Models\invoices;
 use App\Models\sections;
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Notifications\AddInvoice;
-use App\Exports\InvoicesExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Events\MyEventClass;
 

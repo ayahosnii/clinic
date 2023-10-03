@@ -62,6 +62,14 @@ return [
             'visibility' => 'public',
         ],
 
+        'receipt_attachment' => [
+            'driver' => 'local',
+            'root' => public_path('/Attachments/receipt_attachment/'),
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\ExpensesCategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\RoleController;
@@ -31,7 +33,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('invoices', App\Http\Controllers\InvoicesController::class);
 
+Route::resource('expenses', ExpenseController::class);
+
 Route::resource('sections', App\Http\Controllers\SectionsController::class);
+
+Route::resource('expenses_categories', ExpensesCategoryController::class);
 
 Route::resource('products', App\Http\Controllers\ProductsController::class);
 
@@ -39,11 +45,11 @@ Route::resource('InvoiceAttachments', 'App\Http\Controllers\InvoicesAttachmentsC
 
 Route::get('/section/{id}', 'App\Http\Controllers\InvoicesController@getproducts');
 
-Route::get('/InvoicesDetails/{id}', 'App\Http\Controllers\InvoicesDetailsController@edit');
-
-Route::get('Attachments/{invoice_number}/{file_name}', 'InvoicesDetailsController@open_file');
-
-Route::get('download/{invoice_number}/{file_name}', 'App\Http\Controllers\InvoicesDetailsController@get_file');
+//Route::get('/InvoicesDetails/{id}', 'App\Http\Controllers\InvoicesDetailsController@edit');
+//
+//Route::get('Attachments/{invoice_number}/{file_name}', 'InvoicesDetailsController@open_file');
+//
+//Route::get('download/{invoice_number}/{file_name}', 'App\Http\Controllers\InvoicesDetailsController@get_file');
 
 Route::get('/edit_invoice/{id}', 'App\Http\Controllers\InvoicesController@edit');
 
@@ -51,7 +57,7 @@ Route::get('/Status_show/{id}', 'App\Http\Controllers\InvoicesController@show')-
 
 Route::post('/Status_Update/{id}', 'App\Http\Controllers\InvoicesController@Status_Update')->name('Status_Update');
 
-Route::post('delete_file', 'App\Http\Controllers\InvoicesDetailsController@destroy')->name('delete_file');
+//Route::post('delete_file', 'App\Http\Controllers\InvoicesDetailsController@destroy')->name('delete_file');
 
 Route::get('Invoice_Paid','App\Http\Controllers\InvoicesController@Invoice_Paid');
 
