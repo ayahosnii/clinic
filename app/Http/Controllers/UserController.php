@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -20,7 +19,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $data = User::orderBy('id','DESC')->paginate(5);
-        return view('users.show_user',compact('data'))
+        return view('admin.users.show_user',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -32,7 +31,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
-        return view('users.Add_user',compact('roles'));
+        return view('admin.users.Add_user',compact('roles'));
     }
 
     /**
@@ -69,7 +68,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('users.show',compact('user'));
+        return view('admin.users.show',compact('user'));
     }
 
     /**
@@ -84,7 +83,7 @@ class UserController extends Controller
         $roles = Role::pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
 
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('admin.users.edit',compact('user','roles','userRole'));
     }
 
     /**
