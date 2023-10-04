@@ -11,4 +11,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\admin\TestimonialController;
+
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/testimonial', [TestimonialController::class, 'index'])->name('home');
