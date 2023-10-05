@@ -65,7 +65,9 @@
             z-index: -1;
         }
 
-
+        .btn-login{
+            width: 100%;
+        }
     </style>
 @endpush
     <div class="container-fluid my-5">
@@ -79,30 +81,13 @@
                         <div class="login-header">
                             <h3>Doctor Register <a href="/vuejs/template/register" style="font-size: 20px">Not a Doctor?</a></h3>
                         </div>
-                               <form>
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="text" name="first-name" data-placeholder="First Name">
-                                       </div>
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="text" name="last-name" data-placeholder="Last Name">
-                                       </div>
-                                   </div>
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="text" name="email" data-placeholder="Email">
-                                       </div>
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="number" name="phone_number" data-placeholder="Phone Number">
-                                       </div>
-                                   </div>
-
-
-
-                                   <input class="register-form" type="password" name="password" data-placeholder="Password">
-                                   <button class="btn btn-primary btn-login" type="submit">Login</button>
-
-                               </form>
+                            <form>
+                                <input class="register-form" type="text" name="first-name" data-placeholder="First Name">
+                                <br>
+                                <input class="register-form" type="text" name="last-name" data-placeholder="Last Name">
+                                <br>
+                                <button class="btn btn-primary btn-login" type="submit">Login</button>
+                            </form>
                     </div>
                 </div>
             </div>

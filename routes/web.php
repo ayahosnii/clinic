@@ -21,6 +21,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ServiceController;
 
@@ -36,3 +37,4 @@ Route::get('/price', [PriceController::class, 'index'])->name('price');
 Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
