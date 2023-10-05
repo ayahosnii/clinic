@@ -29,6 +29,8 @@
     <!-- Template Stylesheet -->
     <link href="{{asset('assets/front/css/style.css')}}" rel="stylesheet">
 
+    @stack('styles')
+
 </head>
 
 <body>
@@ -88,6 +90,8 @@
 
 <!-- Template Javascript -->
 <script src="{{asset('assets/front/js/main.js')}}"></script>
+
+@stack('script')
 </body>
 
 </html>

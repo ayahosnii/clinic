@@ -1,0 +1,59 @@
+$color__bg: #00c1c8;
+$color__main: #FFF;
+
+@mixin transition-all($length) {
+    -webkit-transition: all $length ease;
+    -moz-transition: all $length ease;
+    -ms-transition: all $length ease;
+    -o-transition: all $length ease;
+    transition: all $length ease;
+}
+
+body {
+    text-align: center;
+    margin-top: 100px;
+    font-family: sans-serif;
+    background: $color__bg;
+}
+
+input {
+    background: $color__bg;
+    border: 3px solid $color__main;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    width: 300px;
+    color: $color__main;
+    font-size: 14px;
+}
+
+.input-wrap {
+    display: inline-block;
+    position: relative;
+
+    label {
+        position: absolute;
+        font-size: 14px;
+        color: $color__main;
+        top: 19px;
+        left: 15px;
+        z-index: 2;
+        background: $color__bg;
+        padding: 0 5px;
+        @include transition-all(300ms);
+
+        &.active {
+            top: -5px;
+        }
+
+        &.hidden {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+
+    &.hidden {
+        opacity: 0;
+        z-index: -1;
+    }
+}
