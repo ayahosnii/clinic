@@ -71,49 +71,68 @@
     </style>
 @endpush
     <div class="container-fluid my-5">
-    <div class="row">
+        <div class="row">
             <div class="account-content">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-7 col-lg-5 mx-2 login-left">
-                        <img src="{{asset('assets/img/poster/login-banner.png')}}" class="img-fluid" alt="Login Banner">
+                        <img src="{{ asset('assets/img/poster/login-banner.png') }}" class="img-fluid" alt="Login Banner">
                     </div>
                     <div class="col-md-12 col-lg-5 mx-2 login-right">
                         <div class="login-header">
                             <h3>Doctor Register <a href="/vuejs/template/register" style="font-size: 20px">Not a Doctor?</a></h3>
                         </div>
-                               <form>
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="text" name="first-name" data-placeholder="First Name">
-                                       </div>
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="text" name="last-name" data-placeholder="Last Name">
-                                       </div>
-                                   </div>
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="text" name="email" data-placeholder="Email">
-                                       </div>
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="number" name="phone_number" data-placeholder="Phone Number">
-                                       </div>
-                                   </div>
-                                   <div class="row">
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="password" name="password" data-placeholder="Password">
-                                       </div>
-                                       <div class="col-md-6">
-                                           <input class="register-form" type="password" name="confirm-password" data-placeholder="Confirm Password">
-                                       </div>
-                                   </div>
+                        <form method="POST" action="{{ route('dentist.register.store')}}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="register-form" type="text" name="first_name" data-placeholder="First Name">
+                                    @error('first_name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="register-form" type="text" name="last_name" data-placeholder="Last Name">
+                                    @error('last_name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="register-form" type="text" name="email" data-placeholder="Email">
+                                    @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="register-form" type="number" name="phone_number" data-placeholder="Phone Number">
+                                    @error('phone_number')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="register-form" type="password" name="password" data-placeholder="Password">
+                                    @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="register-form" type="password" name="password_confirmation"
+                                           data-placeholder="Confirm Password">
+                                    @error('password_confirmation')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
 
-                                   <button class="btn btn-primary btn-register" type="submit">Register</button>
-
-                               </form>
+                            <button class="btn btn-primary btn-register" type="submit">Register</button>
+                        </form>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
 </div>
 @endsection
 @push('script')

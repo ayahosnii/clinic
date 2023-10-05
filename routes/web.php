@@ -36,5 +36,8 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/price', [PriceController::class, 'index'])->name('price');
 Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::group(['prefix'=> 'dentist'], function(){
+    Route::get('/register', [RegisterController::class, 'index'])->name('dentist.register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('dentist.register.store');
+    Route::get('/login', [LoginController::class, 'index'])->name('dentist.login');
+});

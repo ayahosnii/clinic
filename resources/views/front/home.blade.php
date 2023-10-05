@@ -1,5 +1,13 @@
 @extends('layouts.front-layout')
 @section('content')
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session()->get('success') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <!-- Hero Start -->
     <div class="container-fluid bg-primary py-5 mb-5 hero-header">
         <div class="container py-5">
