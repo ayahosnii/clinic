@@ -132,7 +132,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <form action="{{ route('expenses.destroy', $expense->id) }}" method="post">
+                    <form action="{{ route('expenses.destroy', 'test') }}" method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
                 </div>

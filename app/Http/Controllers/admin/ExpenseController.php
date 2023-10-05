@@ -140,12 +140,12 @@ class ExpenseController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
 
         try {
             // Find the expense record by its ID
-            $expense = Expense::findOrFail($id);
+            $expense = Expense::findOrFail($request->expense_id);
 
 
 
