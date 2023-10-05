@@ -40,4 +40,5 @@ Route::group(['prefix'=> 'dentist'], function(){
     Route::get('/register', [RegisterController::class, 'index'])->name('dentist.register');
     Route::post('/register', [RegisterController::class, 'store'])->name('dentist.register.store');
     Route::get('/login', [LoginController::class, 'index'])->name('dentist.login');
+    Route::post('/dentist/login', [LoginController::class, 'login'])->name('dentist.login.store');
 });
