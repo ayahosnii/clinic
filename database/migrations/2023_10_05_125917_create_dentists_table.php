@@ -15,25 +15,15 @@ class CreateDentistsTable extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('phone_number');
-            $table->string('address');
-            $table->string('city');
-            $table->string('state');
-            $table->string('zip_code');
-            $table->date('date_of_birth');
-            $table->string('gender');
-            $table->string('license_number');
-            $table->text('education');
-            $table->text('experience');
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
             $table->boolean('active')->default(true);
-            $table->integer('clinic_id');
             $table->decimal('hourly_rate', 10, 2);
             $table->text('bio');
             $table->string('profile_picture')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreignId('created_by')->nullable()->constrained('users');
-            $table->foreignId('updated_by')->nullable()->constrained('users');
-            $table->foreignId('specialty_id')->constrained('specialties'); // Foreign key to Specialties table
+            $table->foreignId('specialty_id')->constrained('specialties');
         });
     }
 
