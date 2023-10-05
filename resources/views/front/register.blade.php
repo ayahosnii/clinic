@@ -64,7 +64,9 @@
             opacity: 0;
             z-index: -1;
         }
-
+        .btn-register{
+            width: 100%;
+        }
 
     </style>
 @endpush
@@ -96,11 +98,16 @@
                                            <input class="register-form" type="number" name="phone_number" data-placeholder="Phone Number">
                                        </div>
                                    </div>
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                           <input class="register-form" type="password" name="password" data-placeholder="Password">
+                                       </div>
+                                       <div class="col-md-6">
+                                           <input class="register-form" type="password" name="password" data-placeholder="Confirm Password">
+                                       </div>
+                                   </div>
 
-
-
-                                   <input class="register-form" type="password" name="password" data-placeholder="Password">
-                                   <button class="btn btn-primary btn-login" type="submit">Login</button>
+                                   <button class="btn btn-primary btn-register" type="submit">Register</button>
 
                                </form>
                     </div>
