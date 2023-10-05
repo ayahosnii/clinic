@@ -80,9 +80,27 @@
                             <h3>Doctor Register <a href="/vuejs/template/register" style="font-size: 20px">Not a Doctor?</a></h3>
                         </div>
                                <form>
-                                   <input class="register-form" type="text" name="first-name" data-placeholder="First Name">
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                           <input class="register-form" type="text" name="first-name" data-placeholder="First Name">
+                                       </div>
+                                       <div class="col-md-6">
+                                           <input class="register-form" type="text" name="last-name" data-placeholder="Last Name">
+                                       </div>
+                                   </div>
+                                   <div class="row">
+                                       <div class="col-md-6">
+                                           <input class="register-form" type="text" name="email" data-placeholder="Email">
+                                       </div>
+                                       <div class="col-md-6">
+                                           <input class="register-form" type="number" name="phone_number" data-placeholder="Phone Number">
+                                       </div>
+                                   </div>
+
+
+
+                                   <input class="register-form" type="password" name="password" data-placeholder="Password">
                                    <br>
-                                   <input class="register-form" type="text" name="last-name" data-placeholder="Last Name">
                                </form>
                     </div>
                 </div>
