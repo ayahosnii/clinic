@@ -1,6 +1,8 @@
 @extends('layouts.front-layout')
 @section('content')
 @push('styles')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <style>
         .login-header {
             margin-bottom: 20px;
@@ -64,6 +66,9 @@
             opacity: 0;
             z-index: -1;
         }
+        .specialty_id{
+            width: 100%;
+        }
         .btn-register{
             width: 100%;
         }
@@ -126,6 +131,16 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <select class="specialty_id" name="specialty_id">
+                                        @foreach($specialties as $specialty)
+                                            <option value="{{$specialty->id}}">{{$specialty->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
 
                             <button class="btn btn-primary btn-register" type="submit">Register</button>
                         </form>
@@ -160,5 +175,10 @@
             }
         });
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.specialty_id').select2();
+    });
+</script>
 @endpush

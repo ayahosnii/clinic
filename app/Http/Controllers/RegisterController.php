@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dentist;
+use App\Models\Specialty;
 use DB;
 use Hash;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('front.register');
+        $specialties = Specialty::get();
+        return view('front.register', compact('specialties'));
     }
 
 
@@ -38,6 +40,7 @@ class RegisterController extends Controller
                 'email' => $request->input('email'),
                 'phone_number' => $request->input('phone_number'),
                 'password' => Hash::make($request->input('password')),
+                'specialty_id' => $request->input('specialty_id'),
             ]);
 
             // Commit the transaction if everything is successful
