@@ -12,7 +12,7 @@
 |
 */
 
-use App\Http\Controllers\admin\TestimonialController;
+use App\Http\Controllers\TestimonialController;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/testimonial', [TestimonialController::class, 'index'])->name('home');
