@@ -35,6 +35,7 @@ Auth::routes();
 Route::get('/home', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('home');
 Route::get('/confirm-doctors', [ConfirmDoctorController::class, 'index']);
 Route::post('/confirm-doctor/confirm', [ConfirmDoctorController::class, 'confirm']);
+Route::post('/confirm-doctor/accept/{userId}', [ConfirmDoctorController::class, 'acceptUser']);
 
 Route::resource('invoices', \App\Http\Controllers\admin\InvoicesController::class);
 
@@ -85,6 +86,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
 
 });
+
 
 Route::get('invoices_report', 'App\Http\Controllers\admin\Invoices_Report@index');
 Route::post('Search_invoices', 'App\Http\Controllers\admin\Invoices_Report@Search_invoices');

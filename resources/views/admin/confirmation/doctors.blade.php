@@ -45,7 +45,12 @@
                                     <div class="appointment-action">
                                         <a href="javascript:void(0)" class="btn btn-sm btn btn-primary" data-bs-toggle="modal" data-bs-target="#appt_details" style="    background-color: rgba(255,204,0,0.18)!important; color: #e3c500!important;">
                                             <i class="far fa-eye"></i> View </a>
-                                        <a href="javascript:void(0);" class="btn btn-sm bg-success-light" style="background-color: rgba(15,183,107,.12)!important;color: #26af48!important;"><i class="fas fa-check"></i> Accept </a>
+                                            <a href="javascript:void(0);" class="btn btn-sm bg-success-light accept-button"
+                                                data-user-id="{{ $dentist->id }}"
+                                                style="background-color: rgba(15,183,107,.12)!important;color: #26af48!important;">
+                                                <i class="fas fa-check"></i> Accept
+                                                </a>
+
                                         <a href="javascript:void(0);" class="btn btn-sm bg-danger-light" style="background-color: rgba(242,17,54,.12)!important;color: #e63c3c!important;"><i class="fas fa-times"></i> Cancel </a></div>
                                 </div>
                             </li>
@@ -56,3 +61,40 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.accept-button').on('click', function (event) {
+            event.preventDefault();
+            const userId = $(this).data('user-id');
+
+            $.ajax({
+                url: `confirm-doctor/accept/`+userId, // Replace with your Laravel route
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    "_token": "{{ csrf_token() }}"
+                },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Doctor has been accepted.');
+                        // You can also perform a page reload or other actions here
+                    } else {
+                        alert('Error accepting doctor. Please try again.');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                    alert('An error occurred. Please try again later.');
+                },
+            });
+        });
+    });
+</script>
+@endsection
+
+
