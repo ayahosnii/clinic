@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\ConfirmDoctorController;
 use App\Http\Controllers\admin\ExpenseController;
 use App\Http\Controllers\admin\ExpenseReportController;
 use App\Http\Controllers\admin\ExpensesCategoryController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\SectionsController;
-use App\Http\Controllers\ConfirmDoctorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +33,8 @@ Auth::routes();
 //Route::match(['get', 'post'], 'register', function () { abort(404); });
 
 Route::get('/home', [\App\Http\Controllers\admin\HomeController::class, 'index'])->name('home');
-Route::get('/confirm-doctors', [ConfirmDoctorController::class, 'index']);
+Route::get('/confirm-doctors', [ConfirmDoctorController::class, 'index'])->name('confirm-doctors.index');
 Route::post('/confirm-doctor/confirm', [ConfirmDoctorController::class, 'confirm']);
-Route::post('/confirm-doctor/accept/{userId}', [ConfirmDoctorController::class, 'acceptUser']);
 
 Route::resource('invoices', \App\Http\Controllers\admin\InvoicesController::class);
 
