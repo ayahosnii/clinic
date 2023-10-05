@@ -70,29 +70,43 @@
         }
     </style>
 @endpush
-    <div class="container-fluid my-5">
+<div class="container-fluid my-5">
     <div class="row">
-            <div class="account-content">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-7 col-lg-5 mx-2 login-left">
-                        <img src="{{asset('assets/img/poster/login-banner.png')}}" class="img-fluid" alt="Login Banner">
+        <div class="account-content">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 col-lg-5 mx-2 login-left">
+                    <img src="{{ asset('assets/img/poster/login-banner.png') }}" class="img-fluid" alt="Login Banner">
+                </div>
+                <div class="col-md-12 col-lg-5 mx-2 login-right">
+                    <div class="login-header">
+                        <h3>Doctor Register <a href="/vuejs/template/register" style="font-size: 20px">Not a Doctor?</a></h3>
                     </div>
-                    <div class="col-md-12 col-lg-5 mx-2 login-right">
-                        <div class="login-header">
-                            <h3>Doctor Register <a href="/vuejs/template/register" style="font-size: 20px">Not a Doctor?</a></h3>
+                    <form method="POST" action="{{ route('dentist.login.store') }}">
+                        @csrf <!-- CSRF token for security -->
+                        <div class="form-group">
+                            <input class="register-form @error('phone_number') is-invalid @enderror" type="tel" name="phone_number" data-placeholder="Phone" required>
+                            @error('phone_number')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
-                            <form>
-                                <input class="register-form" type="text" name="first-name" data-placeholder="First Name">
-                                <br>
-                                <input class="register-form" type="text" name="last-name" data-placeholder="Last Name">
-                                <br>
-                                <button class="btn btn-primary btn-login" type="submit">Login</button>
-                            </form>
-                    </div>
+                        <div class="form-group">
+                            <input class="register-form @error('password') is-invalid @enderror" type="password" name="password" data-placeholder="Enter Password" required>
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <button class="btn btn-primary btn-login" type="submit">Login</button>
+                    </form>
                 </div>
             </div>
+        </div>
     </div>
 </div>
+
 @endsection
 @push('script')
     <script>

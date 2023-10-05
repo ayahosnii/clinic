@@ -1,11 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::FRONT_HOME;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('front_guest')->except('logout');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,69 +37,33 @@ class LoginController extends Controller
         return view('front.login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        // Handle the login request
+        public function login(Request $request)
+        {
+            // Validate the login data
+            $request->validate([
+                'phone_number' => 'required',
+                'password' => 'required',
+            ]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            // Attempt to log in the user
+            if (Auth::guard('dentist')->attempt(['phone_number' => $request->phone_number, 'password' => $request->password])) {
+                // Authentication was successful for the "dentists" guard
+                return redirect()->route('front.home'); // Redirect to the intended page or your desired location
+            }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+            // Authentication failed
+            return back()->withErrors(['email' => 'Invalid login credentials'])->withInput();
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        // Logout the user
+        public function logout(Request $request)
+        {
+            Auth::logout();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+            return redirect('/login');
+        }
 }

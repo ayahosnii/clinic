@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'dentist' => [ // Define the "dentist" guard
+            'driver' => 'session',
+            'provider' => 'dentists', // Use the "dentists" provider
+        ],
     ],
 
     /*
@@ -67,6 +71,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'dentists' => [ // Define the "dentists" provider
+            'driver' => 'eloquent',
+            'model' => App\Models\Dentist::class, // Use the Dentist model
         ],
 
         // 'users' => [
