@@ -65,7 +65,9 @@
             z-index: -1;
         }
 
-
+        .btn-login{
+            width: 100%;
+        }
     </style>
 @endpush
     <div class="container-fluid my-5">
@@ -83,6 +85,8 @@
                                 <input class="register-form" type="text" name="first-name" data-placeholder="First Name">
                                 <br>
                                 <input class="register-form" type="text" name="last-name" data-placeholder="Last Name">
+                                <br>
+                                <button class="btn btn-primary btn-login" type="submit">Login</button>
                             </form>
                     </div>
                 </div>
