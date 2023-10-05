@@ -36,9 +36,10 @@
                             <li class="list-group-item d-flex align-items-center">
                                 <img alt="" class="mr-3 rounded-circle avatar-md" src="{{URL::asset('assets/img/faces/5.jpg')}}">
                                 <div>
-                                    <h6 style="text-align: left" class="tx-15 mb-1 tx-inverse tx-semibold mg-b-0">{{$dentist->first_name}}</h6>
+                                    <h6 style="text-align: left" class="tx-15 mb-1 tx-inverse tx-semibold mg-b-0">{{$dentist->first_name}} {{$dentist->last_name}}</h6>
                                     <span style="text-align: left;" class="d-block tx-13 text-muted">
-                                    14 Nov 2023, 10.00 AM</span>
+                                   {{$dentist->created_at}}
+                                    </span>
                                 </div>
                                 <div class="d-flex float-left ml-auto">
                                     <div class="appointment-action">
