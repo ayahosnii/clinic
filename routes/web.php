@@ -26,7 +26,7 @@ use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ServiceController;
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('front.home');
 Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial');
 Route::get('/team', [TeamController::class, 'index'])->name('team');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
