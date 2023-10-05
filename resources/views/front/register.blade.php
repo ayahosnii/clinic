@@ -103,7 +103,7 @@
                                            <input class="register-form" type="password" name="password" data-placeholder="Password">
                                        </div>
                                        <div class="col-md-6">
-                                           <input class="register-form" type="password" name="password" data-placeholder="Confirm Password">
+                                           <input class="register-form" type="password" name="confirm-password" data-placeholder="Confirm Password">
                                        </div>
                                    </div>
 
