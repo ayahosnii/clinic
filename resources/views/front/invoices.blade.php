@@ -1,8 +1,14 @@
 @extends('layouts.front-layout')
 @push('styles')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
 
     <link href="{{asset('assets/css/doctordashboard.css')}}" rel="stylesheet" />
+
+    @vite(['resources/sass/doctordashboard.scss', 'assets/css/doctordashboard.css'])
+
 @endpush
 
 @section('content')
@@ -247,22 +253,6 @@
                                 alt="react"
                                 />
                             </div>
-                            <div style="padding: 0 10px">
-                                <span style="display: block; margin-bottom: 10px"
-                                >Pro sidebar is also available as a react package
-                                </span>
-                                <div style="margin-bottom: 15px">
-                                <img
-                                    alt="preview badge"
-                                    src="https://img.shields.io/github/stars/azouaoui-med/react-pro-sidebar?style=social"
-                                />
-                                </div>
-                                <div>
-                                <a href="https://github.com/azouaoui-med/react-pro-sidebar" target="_blank"
-                                    >Check it out!</a
-                                >
-                                </div>
-                            </div>
                             </div>
                         </div>
                         </div>
@@ -274,79 +264,21 @@
                             <a id="btn-toggle" href="#" class="sidebar-toggler break-point-sm">
                             <i class="ri-menu-line ri-xl"></i>
                             </a>
-                            <h1 style="margin-bottom: 0">Pro Sidebar</h1>
                             <span style="display: inline-block">
-                            Responsive layout with advanced sidebar menu built with SCSS and vanilla Javascript
                             </span>
                             <br />
                             <span>
-                            Full Code and documentation available on
                             <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank"
                                 >Github</a
                             >
                             </span>
                             <div style="margin-top: 10px">
-                            <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-                                <img
-                                alt="GitHub stars"
-                                src="https://img.shields.io/github/stars/azouaoui-med/pro-sidebar-template?style=social"
-                                />
-                            </a>
-                            <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-                                <img
-                                alt="GitHub forks"
-                                src="https://img.shields.io/github/forks/azouaoui-med/pro-sidebar-template?style=social"
-                                />
-                            </a>
+
                             </div>
                         </div>
-                        <div>
-                            <h2>Features</h2>
-                            <ul>
-                            <li>Fully responsive</li>
-                            <li>Collapsable sidebar</li>
-                            <li>Multi level menu</li>
-                            <li>RTL support</li>
-                            <li>Customizable</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2>Resources</h2>
-                            <ul>
-                            <li>
-                                <a target="_blank" href="https://github.com/azouaoui-med/css-pro-layout">
-                                Css Pro Layout</a
-                                >
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://github.com/popperjs/popper-core"> Popper Core</a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://remixicon.com/"> Remix Icons</a>
-                            </li>
-                            </ul>
-                        </div>
+
                         <footer class="footer">
-                            <small style="margin-bottom: 20px; display: inline-block">
-                            © 2023 made with
-                            <span style="color: red; font-size: 18px">&#10084;</span> by -
-                            <a target="_blank" href="https://azouaoui.netlify.com"> Mohamed Azouaoui </a>
-                            </small>
-                            <br />
-                            <div class="social-links">
-                            <a href="https://github.com/azouaoui-med" target="_blank">
-                                <i class="ri-github-fill ri-xl"></i>
-                            </a>
-                            <a href="https://twitter.com/azouaoui_med" target="_blank">
-                                <i class="ri-twitter-fill ri-xl"></i>
-                            </a>
-                            <a href="https://codepen.io/azouaoui-med" target="_blank">
-                                <i class="ri-codepen-fill ri-xl"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/mohamed-azouaoui/" target="_blank">
-                                <i class="ri-linkedin-box-fill ri-xl"></i>
-                            </a>
-                            </div>
+
                         </footer>
                         </main>
                         <div class="overlay"></div>
@@ -360,5 +292,262 @@
 @endsection
 
 @push('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
 
+    <script>
+    const ANIMATION_DURATION = 300;
+
+    const SIDEBAR_EL = document.getElementById("sidebar");
+
+    const SUB_MENU_ELS = document.querySelectorAll(
+        ".menu > ul > .menu-item.sub-menu"
+    );
+
+    const FIRST_SUB_MENUS_BTN = document.querySelectorAll(
+        ".menu > ul > .menu-item.sub-menu > a"
+    );
+
+    const INNER_SUB_MENUS_BTN = document.querySelectorAll(
+        ".menu > ul > .menu-item.sub-menu .menu-item.sub-menu > a"
+    );
+
+    class PopperObject {
+        instance = null;
+        reference = null;
+        popperTarget = null;
+
+        constructor(reference, popperTarget) {
+            this.init(reference, popperTarget);
+        }
+
+        init(reference, popperTarget) {
+            this.reference = reference;
+            this.popperTarget = popperTarget;
+            this.instance = Popper.createPopper(this.reference, this.popperTarget, {
+                placement: "right",
+                strategy: "fixed",
+                resize: true,
+                modifiers: [
+                    {
+                        name: "computeStyles",
+                        options: {
+                            adaptive: false
+                        }
+                    },
+                    {
+                        name: "flip",
+                        options: {
+                            fallbackPlacements: ["left", "right"]
+                        }
+                    }
+                ]
+            });
+
+            document.addEventListener(
+                "click",
+                (e) => this.clicker(e, this.popperTarget, this.reference),
+                false
+            );
+
+            const ro = new ResizeObserver(() => {
+                this.instance.update();
+            });
+
+            ro.observe(this.popperTarget);
+            ro.observe(this.reference);
+        }
+
+        clicker(event, popperTarget, reference) {
+            if (
+                SIDEBAR_EL.classList.contains("collapsed") &&
+                !popperTarget.contains(event.target) &&
+                !reference.contains(event.target)
+            ) {
+                this.hide();
+            }
+        }
+
+        hide() {
+            this.instance.state.elements.popper.style.visibility = "hidden";
+        }
+    }
+
+    class Poppers {
+        subMenuPoppers = [];
+
+        constructor() {
+            this.init();
+        }
+
+        init() {
+            SUB_MENU_ELS.forEach((element) => {
+                this.subMenuPoppers.push(
+                    new PopperObject(element, element.lastElementChild)
+                );
+                this.closePoppers();
+            });
+        }
+
+        togglePopper(target) {
+            if (window.getComputedStyle(target).visibility === "hidden")
+                target.style.visibility = "visible";
+            else target.style.visibility = "hidden";
+        }
+
+        updatePoppers() {
+            this.subMenuPoppers.forEach((element) => {
+                element.instance.state.elements.popper.style.display = "none";
+                element.instance.update();
+            });
+        }
+
+        closePoppers() {
+            this.subMenuPoppers.forEach((element) => {
+                element.hide();
+            });
+        }
+    }
+
+    const slideUp = (target, duration = ANIMATION_DURATION) => {
+        const { parentElement } = target;
+        parentElement.classList.remove("open");
+        target.style.transitionProperty = "height, margin, padding";
+        target.style.transitionDuration = `${duration}ms`;
+        target.style.boxSizing = "border-box";
+        target.style.height = `${target.offsetHeight}px`;
+        target.offsetHeight;
+        target.style.overflow = "hidden";
+        target.style.height = 0;
+        target.style.paddingTop = 0;
+        target.style.paddingBottom = 0;
+        target.style.marginTop = 0;
+        target.style.marginBottom = 0;
+        window.setTimeout(() => {
+            target.style.display = "none";
+            target.style.removeProperty("height");
+            target.style.removeProperty("padding-top");
+            target.style.removeProperty("padding-bottom");
+            target.style.removeProperty("margin-top");
+            target.style.removeProperty("margin-bottom");
+            target.style.removeProperty("overflow");
+            target.style.removeProperty("transition-duration");
+            target.style.removeProperty("transition-property");
+        }, duration);
+    };
+    const slideDown = (target, duration = ANIMATION_DURATION) => {
+        const { parentElement } = target;
+        parentElement.classList.add("open");
+        target.style.removeProperty("display");
+        let { display } = window.getComputedStyle(target);
+        if (display === "none") display = "block";
+        target.style.display = display;
+        const height = target.offsetHeight;
+        target.style.overflow = "hidden";
+        target.style.height = 0;
+        target.style.paddingTop = 0;
+        target.style.paddingBottom = 0;
+        target.style.marginTop = 0;
+        target.style.marginBottom = 0;
+        target.offsetHeight;
+        target.style.boxSizing = "border-box";
+        target.style.transitionProperty = "height, margin, padding";
+        target.style.transitionDuration = `${duration}ms`;
+        target.style.height = `${height}px`;
+        target.style.removeProperty("padding-top");
+        target.style.removeProperty("padding-bottom");
+        target.style.removeProperty("margin-top");
+        target.style.removeProperty("margin-bottom");
+        window.setTimeout(() => {
+            target.style.removeProperty("height");
+            target.style.removeProperty("overflow");
+            target.style.removeProperty("transition-duration");
+            target.style.removeProperty("transition-property");
+        }, duration);
+    };
+
+    const slideToggle = (target, duration = ANIMATION_DURATION) => {
+        if (window.getComputedStyle(target).display === "none")
+            return slideDown(target, duration);
+        return slideUp(target, duration);
+    };
+
+    const PoppersInstance = new Poppers();
+
+    /**
+     * wait for the current animation to finish and update poppers position
+     */
+    const updatePoppersTimeout = () => {
+        setTimeout(() => {
+            PoppersInstance.updatePoppers();
+        }, ANIMATION_DURATION);
+    };
+
+    /**
+     * sidebar collapse handler
+     */
+    document.getElementById("btn-collapse").addEventListener("click", () => {
+        SIDEBAR_EL.classList.toggle("collapsed");
+        PoppersInstance.closePoppers();
+        if (SIDEBAR_EL.classList.contains("collapsed"))
+            FIRST_SUB_MENUS_BTN.forEach((element) => {
+                element.parentElement.classList.remove("open");
+            });
+
+        updatePoppersTimeout();
+    });
+
+    /**
+     * sidebar toggle handler (on break point )
+     */
+    document.getElementById("btn-toggle").addEventListener("click", () => {
+        SIDEBAR_EL.classList.toggle("toggled");
+
+        updatePoppersTimeout();
+    });
+
+    /**
+     * toggle sidebar on overlay click
+     */
+    document.getElementById("overlay").addEventListener("click", () => {
+        SIDEBAR_EL.classList.toggle("toggled");
+    });
+
+    const defaultOpenMenus = document.querySelectorAll(".menu-item.sub-menu.open");
+
+    defaultOpenMenus.forEach((element) => {
+        element.lastElementChild.style.display = "block";
+    });
+
+    /**
+     * handle top level submenu click
+     */
+    FIRST_SUB_MENUS_BTN.forEach((element) => {
+        element.addEventListener("click", () => {
+            if (SIDEBAR_EL.classList.contains("collapsed"))
+                PoppersInstance.togglePopper(element.nextElementSibling);
+            else {
+                const parentMenu = element.closest(".menu.open-current-submenu");
+                if (parentMenu)
+                    parentMenu
+                        .querySelectorAll(":scope > ul > .menu-item.sub-menu > a")
+                        .forEach(
+                            (el) =>
+                                window.getComputedStyle(el.nextElementSibling).display !==
+                                "none" && slideUp(el.nextElementSibling)
+                        );
+                slideToggle(element.nextElementSibling);
+            }
+        });
+    });
+
+    /**
+     * handle inner submenu click
+     */
+    INNER_SUB_MENUS_BTN.forEach((element) => {
+        element.addEventListener("click", () => {
+            slideToggle(element.nextElementSibling);
+        });
+    });
+
+</script>
 @endpush
