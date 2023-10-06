@@ -26,6 +26,29 @@
                         </div>
                     </div>
                     <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+
+                    @if(Auth::guard('dentist')->check())
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                {{  Auth::guard('dentist')->user()->first_name }}
+                            </a>
+                            <div class="dropdown-menu m-0">
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </div>
+
+                    @else
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('dentist.login') }}">{{ __('Login') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('dentist.register') }}">{{ __('Register') }}</a>
+                                </li>
+                            </ul>
+                        @endif
+
                 </div>
             </div>
         </nav>
