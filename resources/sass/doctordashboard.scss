@@ -56,7 +56,8 @@ $sidebar-footer-height: 230px;
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 1;
+        z-index: 3;
+        opacity: 0.4;
         display: none;
         > img {
             width: 100%;
@@ -352,6 +353,7 @@ $sidebar-footer-height: 230px;
                 .menu {
                     > ul > .sub-menu > .sub-menu-list {
                         background-color: rgba($secondary-bg-color, 0.1);
+                        opacity: 0.5;
                     }
                 }
             }

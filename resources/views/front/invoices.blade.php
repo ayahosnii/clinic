@@ -18,7 +18,7 @@
         <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
             <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
             <div class="image-wrapper">
-                <img src="assets/images/sidebar-bg.jpg" alt="sidebar background" />
+                <img src="{{asset('assets/img/den-bg.jpg')}}" alt="sidebar background" />
             </div>
             <div class="sidebar-layout">
                 <div class="sidebar-header">
