@@ -21,7 +21,7 @@
                             <hr>
                         </div>
                         <div id="nav-content">
-                            <div class="nav-button"><i class="fas fa-palette"></i><span>Your Work</span></div>
+                            <div class="nav-button"><i class="fas fa-palette"></i><span>My Work</span></div>
                             <div class="nav-button"><i class="fas fa-images"></i><span>Assets</span></div>
                             <div class="nav-button"><i class="fas fa-thumbtack"></i><span>Pinned Items</span></div>
                             <hr>
