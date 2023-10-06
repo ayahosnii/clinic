@@ -18,7 +18,6 @@ $sidebar-footer-height: 230px;
         padding: 20px;
     }
     .content {
-        padding: 12px 50px;
         display: flex;
         flex-direction: column;
     }
@@ -495,8 +494,8 @@ a {
 
         .sidebar-collapser {
             transition: left, right, 0.3s;
-            position: fixed;
-            left: 260px;
+            position: relative;
+            left: 235px;
             top: 40px;
             width: 20px;
             height: 20px;
