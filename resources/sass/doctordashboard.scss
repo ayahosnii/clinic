@@ -1,7 +1,7 @@
-$text-color: #7d84ab;
+$text-color: #1D2A4D;
 $secondary-text-color: #dee2ec;
 
-$bg-color: #0c1e35;
+$bg-color: #ffffff;
 $secondary-bg-color: #0b1a2c;
 
 $border-color: rgba(#535d7d, 0.3);
@@ -351,7 +351,7 @@ $sidebar-footer-height: 230px;
             &:not(.collapsed) {
                 .menu {
                     > ul > .sub-menu > .sub-menu-list {
-                        background-color: rgba($secondary-bg-color, 0.6);
+                        background-color: rgba($secondary-bg-color, 0.1);
                     }
                 }
             }
