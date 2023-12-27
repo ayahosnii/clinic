@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dentist;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('front.home');
+        $dentists = Dentist::get();
+        return view('front.home',compact('dentists'));
     }
 }

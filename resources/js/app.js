@@ -4,8 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
 import { createApp } from 'vue';
+import VueSplide from '@splidejs/vue-splide';
+
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -15,15 +16,27 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import AppointmentComponent from './components/AppointmentComponent.vue';
+import AppoiComponent from "./components/AppoiComponent.vue";
+import FindDoctor from "./components/FindDoctor.vue";
+import DoctorSelector from "./components/DoctorSelector.vue";
+import SpecializationSelector from "./components/SpecializationSelector.vue";
+import AppointmentForm from "./components/AppointmentForm.vue";
+app.component('appointment-component', AppointmentComponent);
+app.component('doctor-selector', DoctorSelector);
+app.component('specialization-selector', SpecializationSelector);
+app.component('appointment-form', AppointmentForm);
+app.component('appoi-component', AppoiComponent);
+app.component('find-doctor', FindDoctor);
+app.use( VueSplide );
+
 
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./components/AppointmentComponent.vue -> <example-component></example-component>
  */
 
 // Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {

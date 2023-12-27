@@ -19,6 +19,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{asset('assets/front/css/icofont.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/front/css/slicknav.min.css')}}">
     <!-- Libraries Stylesheet -->
     <link href="{{asset('assets/front/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/front/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}" rel="stylesheet">
@@ -26,8 +28,23 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('assets/front/css/bootstrap.min.css')}}" rel="stylesheet">
 
+<!--
+    <link rel="stylesheet" href="{{--asset('assets/css/nice-select.css')--}}">
+-->
+
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/owl-carousel.css')}}">
+
     <!-- Template Stylesheet -->
     <link href="{{asset('assets/front/css/style.css')}}" rel="stylesheet">
+
+    <!-- icofont CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/icofont.css')}}">
+    <!-- Medipro CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/med.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 
     @stack('styles')
 
@@ -81,6 +98,11 @@
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- jquery Min JS -->
+<script src="{{('assets/js/jquery.min.js')}}"></script>
+<!-- jquery Migrate JS -->
+<script src="{{('assets/js/jquery-migrate-3.0.0.js')}}"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('assets/front/lib/easing/easing.min.js')}}"></script>
 <script src="{{asset('assets/front/lib/waypoints/waypoints.min.js')}}"></script>
@@ -88,9 +110,21 @@
 <script src="{{asset('assets/front/lib/tempusdominus/js/moment.min.js')}}"></script>
 <script src="{{asset('assets/front/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
 <script src="{{asset('assets/front/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- Jquery Nav JS -->
+<script src="{{asset('assets/js/jquery.nav.js')}}"></script>
+<!-- Slicknav JS -->
+<script src="{{asset('assets/js/slicknav.min.js')}}"></script>
+<!-- Owl Carousel JS -->
+<!-- Niceselect JS -->
+<script src="{{--asset('assets/js/niceselect.js')--}}"></script>
+<script src="{{asset('assets/js/owl-carousel.js')}}"></script>
 
+<!-- counterup JS -->
+<script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
 <!-- Template Javascript -->
 <script src="{{asset('assets/front/js/main.js')}}"></script>
+<script src="{{asset('assets/js/med.js')}}"></script>
+@vite(['resources/js/app.js'])
 
 @stack('script')
 </body>

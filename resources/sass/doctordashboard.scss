@@ -1,12 +1,12 @@
 $text-color: #1D2A4D;
-$secondary-text-color: #dee2ec;
+$secondary-text-color: #1a76d1;
 
 $bg-color: #ffffff;
 $secondary-bg-color: #0b1a2c;
 
 $border-color: rgba(#535d7d, 0.3);
 
-$sidebar-header-height: 100px;
+$sidebar-header-height: 150px;
 $sidebar-footer-height: 230px;
 
 
@@ -149,6 +149,7 @@ $sidebar-footer-height: 230px;
                 margin: 0;
             }
             .menu-header {
+                color: #1a76d1;
                 font-weight: 600;
                 padding: 10px 25px;
                 font-size: 0.8em;
@@ -506,7 +507,7 @@ a {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background-color: #00829f;
+            background-color: #1a76d1;
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;

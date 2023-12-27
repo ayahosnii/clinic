@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
+use App\Models\Patient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DoctorDashboardController extends Controller
 {
@@ -13,7 +16,17 @@ class DoctorDashboardController extends Controller
 
     public function appointments()
     {
-        return view('front.appointments');
+        $appointments = Appointment::with('patient')
+            ->where('dentist_id',  Auth::guard('dentist')->user()->id )
+            ->get();
+
+        return view('front.appointments', compact('appointments'));
+    }
+
+    public function patientProfile($id)
+    {
+        $patient = Patient::with('appointments')->where('id', $id)->first();
+        return view('front.patient-profile', compact('patient'));
     }
 
     public function myPatients()
@@ -29,6 +42,10 @@ class DoctorDashboardController extends Controller
     public function availableTimings()
     {
         return view('front.available-timings');
+    }
+    public function workHour()
+    {
+        return view('front.work-hours');
     }
 
     public function invoices()

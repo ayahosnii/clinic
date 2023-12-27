@@ -13,4 +13,14 @@ class Dentist extends Authenticatable
     use HasFactory, Notifiable, HasRoles;
 
     protected $guarded = [];
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . " " . $this->last_name;
+    }
+
+    public function getProfilePictureAttribute($value)
+    {
+        return asset('assets/front/img/dentists/' . $value);
+    }
 }

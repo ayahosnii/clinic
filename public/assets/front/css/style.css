@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #13C5DD;
+    --primary: #1a76d1;
     --secondary: #354F8E;
     --light: #EFF5F9;
     --dark: #1D2A4D;
@@ -149,6 +149,35 @@
     z-index: -1;
 }
 
+.doctor-amount {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.doctor-amount span {
+    font-weight: 500;
+    font-size: 15px;
+    color: #2C2C2C;
+    padding: 6px 12px;
+    background: #ffffff;
+    border-radius: 8px;
+}
+.reviews-ratings p {
+    color: #9CA3AF;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+.reviews-ratings span {
+    margin: 0 4px 0 0;
+    padding: 2px 3px;
+    min-width: 46px;
+    color: #ffffff;
+    font-size: 12px;
+    background: #FFBC11;
+    border-radius: 6px;
+}
 .price-carousel .owl-nav {
     margin-top: 35px;
     width: 100%;

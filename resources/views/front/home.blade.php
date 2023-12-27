@@ -8,22 +8,66 @@
             </button>
         </div>
     @endif
-    <!-- Hero Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
-        <div class="container py-5">
-            <div class="row justify-content-start">
-                <div class="col-lg-8 text-center text-lg-start">
-                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To Medinova</h5>
-                    <h1 class="display-1 text-white mb-md-4">Best Healthcare Solution In Your City</h1>
-                    <div class="pt-2">
-                        <a href="" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Find Doctor</a>
-                        <a href="" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a>
+    <!-- Slider Area -->
+    <section class="slider">
+        <div class="hero-slider">
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('assets/img/slider2.jpg')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="text">
+                                <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
+                                <div class="button">
+                                    <a href="#" class="btn">Get Appointment</a>
+                                    <a href="#" class="btn primary">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- End Single Slider -->
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('assets/img/slider.jpg')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="text">
+                                <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
+                                <div class="button">
+                                    <a href="#" class="btn">Get Appointment</a>
+                                    <a href="#" class="btn primary">About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start End Slider -->
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('assets/img/slider3.jpg')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="text">
+                                <h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
+                                <div class="button">
+                                    <a href="#" class="btn">Get Appointment</a>
+                                    <a href="#" class="btn primary">Conatct Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Slider -->
         </div>
-    </div>
-    <!-- Hero End -->
+    </section>
+    <!--/ End Slider Area -->
 
 
     <!-- About Start -->
@@ -32,12 +76,12 @@
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded" src="{{asset('assets/front/img/about.jpg')}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded" src="{{asset('assets/front/img/about1.jpg')}}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
+                        <h5 class="d-inline-block text-primary text-uppercase">About Us</h5>
                         <h1 class="display-4">Best Medical Care For Yourself and Your Family</h1>
                     </div>
                     <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
@@ -73,91 +117,174 @@
     </div>
     <!-- About End -->
 
-
-    <!-- Services Start -->
-    <div class="container-fluid py-5">
+    <!-- Start Fun-facts -->
+    <div id="fun-facts" class="fun-facts section overlay">
         <div class="container">
-            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h5>
-                <h1 class="display-4">Excellent Medical Services</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-user-md text-white"></i>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="icofont icofont-home"></i>
+                        <div class="content">
+                            <span class="counter">3468</span>
+                            <p>Hospital Rooms</p>
                         </div>
-                        <h4 class="mb-3">Emergency Care</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
                     </div>
+                    <!-- End Single Fun -->
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-procedures text-white"></i>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="icofont icofont-user-alt-3"></i>
+                        <div class="content">
+                            <span class="counter">557</span>
+                            <p>Specialist Doctors</p>
                         </div>
-                        <h4 class="mb-3">Operation & Surgery</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
                     </div>
+                    <!-- End Single Fun -->
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-stethoscope text-white"></i>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="icofont-simple-smile"></i>
+                        <div class="content">
+                            <span class="counter">4379</span>
+                            <p>Happy Patients</p>
                         </div>
-                        <h4 class="mb-3">Outdoor Checkup</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
                     </div>
+                    <!-- End Single Fun -->
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-ambulance text-white"></i>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Fun -->
+                    <div class="single-fun">
+                        <i class="icofont icofont-table"></i>
+                        <div class="content">
+                            <span class="counter">32</span>
+                            <p>Years of Experience</p>
                         </div>
-                        <h4 class="mb-3">Ambulance Service</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-pills text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Medicine & Pharmacy</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-microscope text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Blood Testing</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                    <!-- End Single Fun -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- Services End -->
+    <!--/ End Fun-facts -->
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Our Doctors</h5>
+                <h1 class="display-4">Qualified Healthcare Professionals</h1>
+            </div>
+            <div class="owl-carousel team-carousel position-relative">
+                @foreach($dentists as $dentist)
+                    <div class="team-item">
+                        <div class="row g-0 bg-light rounded overflow-hidden">
+                            <div class="col-12 col-sm-5 h-100 doc-pro-img">
+                                <div class="doctor-amount">
+                                    <span>$ 360</span>
+                                </div>
+                                <img class="img-fluid h-100" src="{{$dentist->profile_picture}}" style="object-fit: cover;">
+                            </div>
+                            <div class="col-12 col-sm-7 h-100 d-flex flex-column">
+                                <div class="mt-auto p-4">
+                                    <h3>{{$dentist->full_name}}</h3>
+                                    <h6 class="fw-normal fst-italic text-primary mb-4">Cardiology Specialist</h6>
+                                    <div class="reviews-ratings">
+                                        <p>
+                                            <span><i class="fas fa-star"></i> 4.0</span> (20)
+                                        </p>
+                                    </div>
+                                    <p class="m-0">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
+                                </div>
+                                <div class="d-flex mt-auto border-top p-4">
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Start service -->
+    <section class="services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>We Offer Different Services To Improve Your Health</h2>
+                        <img src="{{asset('assets/front/img/section-img.png')}}" alt="#">
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-prescription"></i>
+                        <h4><a href="service-details.html">General Treatment</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-tooth"></i>
+                        <h4><a href="service-details.html">Teeth Whitening</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-heart-alt"></i>
+                        <h4><a href="service-details.html">Heart Surgery</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-listening"></i>
+                        <h4><a href="service-details.html">Ear Treatment</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-eye-alt"></i>
+                        <h4><a href="service-details.html">Vision Problems</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-blood"></i>
+                        <h4><a href="service-details.html">Blood Transfusion</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet. </p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End service -->
+
 
 
     <!-- Appointment Start -->
@@ -311,77 +438,6 @@
         </div>
     </div>
     <!-- Pricing Plan End -->
-
-
-    <!-- Team Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Our Doctors</h5>
-                <h1 class="display-4">Qualified Healthcare Professionals</h1>
-            </div>
-            <div class="owl-carousel team-carousel position-relative">
-                <div class="team-item">
-                    <div class="row g-0 bg-light rounded overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{asset('assets/front/img/team-1.jpg')}}" style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column">
-                            <div class="mt-auto p-4">
-                                <h3>Doctor Name</h3>
-                                <h6 class="fw-normal fst-italic text-primary mb-4">Cardiology Specialist</h6>
-                                <p class="m-0">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
-                            </div>
-                            <div class="d-flex mt-auto border-top p-4">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-item">
-                    <div class="row g-0 bg-light rounded overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{asset('assets/front/img/team-2.jpg')}}" style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column">
-                            <div class="mt-auto p-4">
-                                <h3>Doctor Name</h3>
-                                <h6 class="fw-normal fst-italic text-primary mb-4">Cardiology Specialist</h6>
-                                <p class="m-0">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
-                            </div>
-                            <div class="d-flex mt-auto border-top p-4">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-item">
-                    <div class="row g-0 bg-light rounded overflow-hidden">
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{asset('assets/front/img/team-3.jpg')}}" style="object-fit: cover;">
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column">
-                            <div class="mt-auto p-4">
-                                <h3>Doctor Name</h3>
-                                <h6 class="fw-normal fst-italic text-primary mb-4">Cardiology Specialist</h6>
-                                <p class="m-0">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
-                            </div>
-                            <div class="d-flex mt-auto border-top p-4">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
 
 
     <!-- Search Start -->

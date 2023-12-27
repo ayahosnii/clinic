@@ -14,7 +14,7 @@
         }
 
         .login-header h3 a {
-            color: #13C5DD;
+            color: #1a76d1;
             float: right;
             font-size: 15px;
             margin-top: 2px;

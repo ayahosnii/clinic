@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dentist;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -13,7 +14,14 @@ class TeamController extends Controller
      */
     public function index()
     {
-        return view('front.team');
+        $dentists = Dentist::get();
+        return view('front.team',compact('dentists'));
+    }
+
+
+    public function findDoctor()
+    {
+        return view('front.find-doctor');
     }
 
     /**

@@ -1,57 +1,125 @@
-<!-- Navbar Start -->
-<div class="container-fluid sticky-top bg-white shadow-sm">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
-            <a href="/" class="navbar-brand">
-                <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>Medinova</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-                    <a href="{{route('service')}}" class="nav-item nav-link">Service</a>
-                    <a href="{{route('price')}}" class="nav-item nav-link">Pricing</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="{{route('blog')}}" class="dropdown-item">Our Blog</a>
-                            <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                            <a href="{{route('team')}}" class="dropdown-item">Our Team</a>
-                            <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a>
-                            <a href="{{route('appointment')}}" class="dropdown-item">Appointment</a>
-                            <a href="{{route('search')}}" class="dropdown-item">Search</a>
-                        </div>
-                    </div>
-                    <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
 
-                    @if(Auth::guard('dentist')->check())
+<!-- Preloader -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
 
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                {{  Auth::guard('dentist')->user()->first_name }}
-                            </a>
-                            <div class="dropdown-menu m-0">
-                                <a href="#" class="dropdown-item">Logout</a>
-                            </div>
-                        </div>
+        <div class="indicator">
+            <svg width="16px" height="12px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+    </div>
+</div>
+<!-- End Preloader -->
 
-                    @else
-                            <ul class="nav">
-                                <li class="nav-item">
+
+
+<!-- Header Area -->
+<header class="header" >
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5 col-12">
+                    <!-- Contact -->
+                    <ul class="top-link">
+                        <li><a href="{{route('about')}}">About</a></li>
+                        <li><a href="{{route('service')}}">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                    <!-- End Contact -->
+                </div>
+                <div class="col-lg-6 col-md-7 col-12">
+                    <!-- Top Contact -->
+
+                        @if(Auth::guard('web')->check())
+                        <ul class="top-contact">
+                            <li>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                    {{  Auth::guard('dentist')->user()->full_name }}
+                                </a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="#" class="dropdown-item">Logout</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        @else
+                        <ul class="top-contact">
+                                <li>
                                     <a class="nav-link" href="{{ route('dentist.login') }}">{{ __('Login') }}</a>
                                 </li>
-                                <li class="nav-item">
+                                <li>
                                     <a class="nav-link" href="{{ route('dentist.register') }}">{{ __('Register') }}</a>
                                 </li>
                             </ul>
                         @endif
-
+                    <!-- End Top Contact -->
                 </div>
             </div>
-        </nav>
+        </div>
     </div>
-</div>
-<!-- Navbar End -->
+    <!-- End Topbar -->
+    <!-- Header Inner -->
+    <div class="header-inner">
+        <div class="container">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <!-- Start Logo -->
+                        <div class="logo">
+                            <a href="index.html"><img src="img/logo.png" alt="#"></a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Mobile Nav -->
+                        <div class="mobile-nav"></div>
+                        <!-- End Mobile Nav -->
+                    </div>
+                    <div class="col-lg-7 col-md-9 col-12">
+                        <!-- Main Menu -->
+                        <div class="main-menu">
+                            <nav class="navigation">
+                                <ul class="nav menu">
+                                    <li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">Home Page 1</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{route('about')}}">About </a></li>
+                                    <li><a href="{{route('service')}}">Services </a></li>
+                                    <li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{route('search')}}">Search</a></li>
+                                            <li><a href="{{route('price')}}">Price</a></li>
+                                            <li><a href="{{route('team')}}">Team</a></li>
+                                            <li><a href="{{route('testimonial')}}">Testimonial</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{route('blog')}}">Blogs <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="blog-single.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{route('contact')}}">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--/ End Main Menu -->
+                    </div>
+                    <div class="col-lg-2 col-12">
+                        <div class="get-quote">
+                            <a href="{{route('appointment')}}" class="btn">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Header Inner -->
+</header>
+<!-- End Header Area -->

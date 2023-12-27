@@ -15,9 +15,15 @@
         "postcss": "^8.1.14",
         "sass": "^1.56.1",
         "vite": "^4.0.0",
-        "vue": "^3.2.37"
+        "vue": "^3.2.36"
     },
     "dependencies": {
-        "jquery-toast-plugin": "^1.3.2"
+        "@splidejs/vue-splide": "^0.6.12",
+        "jquery": "^3.7.1",
+        "jquery-toast-plugin": "^1.3.2",
+        "typescript": "^5.2.2",
+        "vue-meeting-selector": "^3.0.2",
+        "vue-owl-carousel": "^2.0.3",
+        "vue-slick-carousel": "^1.0.6"
     }
 }
