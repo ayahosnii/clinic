@@ -40,7 +40,7 @@
                         <ul class="top-contact">
                             <li>
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                    {{  Auth::guard('dentist')->user()->full_name }}
+                                    {{  Auth::guard('web')->user()->full_name }}
                                 </a>
                                 <div class="dropdown-menu m-0">
                                     <a href="#" class="dropdown-item">Logout</a>

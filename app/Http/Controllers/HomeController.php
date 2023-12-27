@@ -9,6 +9,6 @@ class HomeController extends Controller
     public function index()
     {
         $dentists = Dentist::get();
-        return view('front.home',compact('dentists'));
+        return view('front.home2',compact('dentists'));
     }
 }
