@@ -9,11 +9,13 @@
         </div>
     @endif
     <div class="site-blocks-cover" style="background-image: url(assets2/front/images/hero-back.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-7">
-                    <span class="sub-text">We Priority Your</span>
-                    <h1>Your <strong>New Smile</strong></h1>
+        <div class="bg" style="background-color: rgba(0,0,0,0.62)">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <span class="sub-text">We Priority Your</span>
+                        <h1>Your <strong>New Smile</strong></h1>
+                    </div>
                 </div>
             </div>
         </div>
