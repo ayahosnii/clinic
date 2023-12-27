@@ -46,6 +46,7 @@
 <script src="{{asset('assets2/front/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('assets2/front/js/aos.js')}}"></script>
 
+<script src="{{asset('assets2/front/js/comparison.js')}}"></script>
 <script src="{{asset('assets2/front/js/main.js')}}"></script>
 
 

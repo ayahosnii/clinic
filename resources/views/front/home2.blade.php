@@ -65,51 +65,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <img src="{{asset('assets2/front/images/img_1.jpg')}}" alt="Image" class="img-fluid">
-                </div>
-                <div class="col-lg-6">
-                    <div class="row row-items">
-                        <div class="col-md-6">
-                            <a href="#" class="d-flex text-center feature active p-4 mb-4">
-                  <span class="align-self-center w-100">
-                    <span class="d-block mb-3">
-                      <span class="flaticon-tooth-whitening display-3"></span>
-                    </span>
-                    <h3>Tooth Whitening</h3>
-                  </span>
-                            </a>
+                    <div class="compare">
+                        <div class="compare__image">
+                            <img src="{{('assets2/front/images/before1.jpg')}}" alt="">
                         </div>
-                        <div class="col-md-6">
-                            <a href="#" class="d-flex text-center feature p-4 mb-4">
-                  <span class="align-self-center w-100">
-                    <span class="d-block mb-3">
-                      <span class="flaticon-stethoscope display-3"></span>
-                    </span>
-                    <h3>Stethoscope</h3>
-                  </span>
-                            </a>
+                        <div class="compare__delimeter"></div>
+                        <div class="compare__image compare__after" >
+                            <img src="{{('assets2/front/images/after1.jpg')}}" alt="">
                         </div>
                     </div>
-                    <div class="row row-items last">
-                        <div class="col-md-6">
-                            <a href="#" class="d-flex text-center feature p-4 mb-4">
-                  <span class="align-self-center w-100">
-                    <span class="d-block mb-3">
-                      <span class="flaticon-first-aid-kit display-3"></span>
-                    </span>
-                    <h3>First Aid Kit</h3>
-                  </span>
-                            </a>
+                </div>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="row">
+                        <div class="col-md-6 card-items">
+                            <div class="side front">Front</div>
+                            <div class="side back">Back</div>
                         </div>
-                        <div class="col-md-6">
-                            <a href="#" class="d-flex text-center active feature p-4 mb-4">
-                  <span class="align-self-center w-100">
-                    <span class="d-block mb-3">
-                      <span class="flaticon-tooth-pliers display-3"></span>
-                    </span>
-                    <h3>Tooth Pliers</h3>
-                  </span>
-                            </a>
+                        <div class="col-md-6 card-items">
+                            <div class="side front">Front</div>
+                            <div class="side back">Back</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 card-items">
+                            <div class="side front">Front</div>
+                            <div class="side back">Back</div>
+                        </div>
+                        <div class="col-md-6 card-items">
+                            <div class="side front">Front</div>
+                            <div class="side back">Back</div>
                         </div>
                     </div>
                 </div>
