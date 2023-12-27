@@ -629,6 +629,9 @@ a {
 .site-block-testimony p {
   font-size: 1.2rem; }
 
+  .site-blocks-cover::after{
+    background: rgba(0, 0, 0, 0.8);
+  }
 .site-block-testimony.active {
   background: #fff;
   -webkit-box-shadow: 0 5px 20px -2px rgba(0, 0, 0, 0.1);
